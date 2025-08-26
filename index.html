@@ -76,9 +76,9 @@ input[type="text"], input[type="date"], select, textarea {
     font-size: 10px;
 }
 
-/* ✅ Pop-up modal */
+/* ✅ Pop-up modal overlay */
 #success-popup {
-    display: none;
+    display: none; /* hidden by default */
     position: fixed;
     top: 0;
     left: 0;
@@ -89,6 +89,8 @@ input[type="text"], input[type="date"], select, textarea {
     justify-content: center;
     align-items: center;
 }
+
+/* ✅ Pop-up card */
 #success-popup .popup-content {
     background: white;
     color: black;
@@ -239,7 +241,7 @@ document.getElementById("myForm").addEventListener("submit", function(event){
         body: new FormData(form),
     }).then(response => {
         if (response.ok) {
-            document.getElementById("success-popup").style.display = "flex";
+            document.getElementById("success-popup").style.display = "flex"; // ✅ show popup
             form.reset();
         } else {
             alert("Something went wrong. Please try again.");
