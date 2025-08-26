@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Oppy Status</title>
+    <style>
+body {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.form-container {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    box-sizing: border-box;
+    position: relative;
+    max-height: 100vh; /* Limits height */
+    overflow-y: auto; /* Enables vertical scrolling */
+}
+.form-container::before {
+    content: '';
+    display: block;
+    height: 15px;
+    background-color: #d5fe9d;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+h1{
+    text-align: center;
+    color: black;
+}
+h5 {
+    font-weight: 80;
+    text-align: center;
+    color: black;
+}
+label, input, select, textarea {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+}
+input[type="text"], input[type="date"], select, textarea {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 12px;
+}
+.submit-button {
+    background-color: #d5fe9d;
+    color: black;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    width: 100%;
+}
+.footer {
+    text-align: left;
+    margin-top: 20px;
+    color: black;
+    font-size: 10px;
+}
+
+/* ✅ Success Message Styling */
+#success-message {
+    display: none;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #d5fe9d;
+    color: black;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Oppy Status</h1>
+        <h5>This form is designed to document the status of the Oppys for identifying their current state on a previous date.</h5>
+        <form id="myForm" action="https://script.google.com/macros/s/AKfycbzb9E9cORgj8-KKgyDoYei4coPl_F5M5GPidJIFtgiaH7T8d20zLa6YNrBazYQzni3u/exec" method="POST">
+            <label for="shiftfield"><b>Shift Date:</b></label>
+            <input type="date" id="shiftfield" name="shiftfield"><br><br>
+			
+			<label for="perdropdown"><b>Personnel Name</b></label><br>
+            <select id="perdropdown" name="perdropdown" required>
+                <option value="Mark Wells">Mark Wells</option>
+                <option value="Dalyn Pawaan">Dalyn Pawaan</option>
+                <option value="Remus Alfajarado">Remus Alfajarado</option>
+                <option value="Ma. Angelie Segovia">Ma. Angelie Segovia</option>
+                <option value="Sai Adventurado">Sai Adventurado</option>
+                <option value="Michael Salvilla">Michael Salvilla</option>
+                <option value="Ma. Antoinette Garce">Ma. Antoinette Garce</option>
+                <option value="Lou Van Erick Piansay">Lou Van Erick Piansay</option>
+                <option value="Vince Javier">Vince Javier</option>
+                <option value="Jazer Demdam">Jazer Demdam</option>
+                <option value="Prince Elardo">Prince Elardo</option>
+                <option value="Laurence Lamera">Laurence Lamera</option>
+                <option value="Anec Jun Monreal">Anec Jun Monreal</option>
+                <option value="Neil Sumayang">Neil Sumayang</option>
+                <option value="Ciane Francis Villegas">Ciane Francis Villegas</option>
+                <option value="Mark John Torralba">Mark John Torralba</option>
+                <option value="Karlos Nicolas Mendoza">Karlos Nicolas Mendoza</option>
+            </select><br><br>
+            <label for="oppydropdown"><b>Oppy</b></label><br>
+            <select id="oppydropdown" name="oppydropdown" required>
+                <option value="Oppy 0">Oppy 0</option>
+                <option value="Oppy 1">Oppy 1</option>  
+                <option value="Oppy 2">Oppy 2</option>
+                <option value="Oppy 3">Oppy 3</option>                
+                <option value="Oppy 4">Oppy 4</option>
+                <option value="Oppy 5">Oppy 5</option>  
+                <option value="Oppy 6">Oppy 6</option>
+                <option value="Oppy 7">Oppy 7</option>  
+                <option value="Oppy 8">Oppy 8</option>  
+                <option value="Oppy 9">Oppy 9</option>
+                <option value="Oppy 10">Oppy 10</option>
+                <option value="Oppy 11">Oppy 11</option>     
+                <option value="Oppy 12">Oppy 12</option>     
+                <option value="Oppy 13">Oppy 13</option>     
+                <option value="Oppy 14">Oppy 14</option>     
+                <option value="Oppy 15">Oppy 15</option>                         
+            </select> <br><br>
+
+            <label for="ewedropdown"><b>Ewelink</b></label><br>
+            <select id="ewedropdown" name="ewedropdown" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>  
+            </select> <br><br>
+
+            <label for="ringdropdown"><b>Ring</b></label><br>
+            <select id="ringdropdown" name="ringdropdown" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>  
+            </select> <br><br>
+
+            <label for="unitreedropdown"><b>Unitree</b></label><br>
+            <select id="unitreedropdown" name="unitreedropdown" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>  
+            </select> <br><br>
+
+            <label for="statusdropdown"><b>Status</b></label><br>
+            <select id="statusdropdown" name="statusdropdown" required>
+                <option value="Working">Working</option>
+                <option value="Malfunction">Malfunction</option>  
+                <option value="Overheating">Overheating</option>
+                <option value="Offline">Offline</option> 
+                <option value="Low Battery">Low Battery</option>
+            </select> <br><br>
+
+            <label for="error"><b>Errors and performance issues (please specify)</b></label><br>
+            <textarea id="error" name="error" required></textarea><br><br>            
+
+            <input type="submit" value="Submit" class="submit-button">
+        </form>
+
+        <!-- ✅ Success message div -->
+        <div id="success-message">Form submitted successfully! Thank you!</div>
+
+        <div class="footer">
+            Created by:<br>Ralph Lawrence Villamor  |  Team Lead - Mission Control Center<br><br>
+        </div>
+    </div>
+
+<script>
+document.getElementById("myForm").addEventListener("submit", function(event){
+    event.preventDefault();
+    var form = event.target;
+    fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+    }).then(response => {
+        if (response.ok) {
+            document.getElementById("success-message").style.display = "block";
+            form.reset();
+        } else {
+            alert("Something went wrong. Please try again.");
+        }
+    }).catch(error => {
+        alert("Error submitting form. Please check your connection.");
+    });
+});
+</script>
+</body>
+</html>
